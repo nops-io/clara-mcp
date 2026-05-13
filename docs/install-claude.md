@@ -7,14 +7,14 @@
 
 ## Install — desktop app
 
-1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](../releases) page.
+1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](https://github.com/nops-io/clara-integrations/releases) page.
 2. In Claude, go to **Settings → Plugins** and click the **+** next to Personal plugins.
 3. Select the downloaded `.zip` file.
 4. Clara will appear in the left sidebar under Personal plugins.
 
 ## Install — CLI
 
-1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](../releases) page.
+1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](https://github.com/nops-io/clara-integrations/releases) page.
 
 2. Install the plugin:
 
