@@ -18,10 +18,12 @@ mkdir -p dist/build/cursor
 mkdir -p dist
 
 test -d packages/cursor/.cursor/rules
+test -d shared/skills
 test -f shared/mcp/clara.mcp.json
 
 # Output is a .cursor/ directory that drops into project root
 rsync -a packages/cursor/.cursor/ dist/build/cursor/.cursor/
+rsync -a shared/skills/ dist/build/cursor/.cursor/skills/
 cp shared/mcp/clara.mcp.json dist/build/cursor/.cursor/mcp.json
 
 OUT="dist/clara-cursor-plugin-v${VERSION}.zip"

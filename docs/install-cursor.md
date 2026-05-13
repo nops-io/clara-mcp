@@ -15,7 +15,7 @@
    unzip clara-cursor-plugin-v*.zip -d /path/to/your/project
    ```
 
-   This places `.cursor/mcp.json` and `.cursor/rules/clara.mdc` directly into your project — exactly where Cursor expects them.
+   This places `.cursor/mcp.json`, `.cursor/rules/clara.mdc`, and `.cursor/skills/` directly into your project — exactly where Cursor expects them.
 
 3. Reload the Cursor window (**Cmd+Shift+P → Reload Window**) to activate the MCP server.
 
@@ -31,6 +31,8 @@ Cursor will prompt you to authorize with nOps on the first request. See [auth.md
 |---|---|
 | `.cursor/mcp.json` | Clara MCP server — registered automatically by Cursor |
 | `.cursor/rules/clara.mdc` | Always-apply behavioral rules for Clara |
+| `.cursor/skills/query-clara/` | Skill: query Clara datasets for cloud cost and FinOps questions |
+| `.cursor/skills/commitment-analysis/` | Skill: analyze commitment savings rate, coverage, and burndown |
 
 ## Global install (all projects)
 
@@ -42,4 +44,4 @@ unzip clara-cursor-plugin-v*.zip -d ~
 
 ## Uninstall
 
-Remove the `clara` entry from `.cursor/mcp.json` and delete `.cursor/rules/clara.mdc`.
+Remove the `clara` entry from `.cursor/mcp.json` and delete `.cursor/rules/clara.mdc` and `.cursor/skills/query-clara/` and `.cursor/skills/commitment-analysis/`.

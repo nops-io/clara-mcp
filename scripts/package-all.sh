@@ -36,6 +36,7 @@ cp shared/mcp/clara.mcp.json dist/build/claude/.mcp.json
 
 # Cursor package: output is a .cursor/ directory that drops into project root
 rsync -a packages/cursor/.cursor/ dist/build/cursor/.cursor/
+rsync -a shared/skills/ dist/build/cursor/.cursor/skills/
 cp shared/mcp/clara.mcp.json dist/build/cursor/.cursor/mcp.json
 
 # Stamp version into Claude plugin manifest
