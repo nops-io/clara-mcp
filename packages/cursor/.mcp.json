@@ -1,8 +1,0 @@
-{
-	"mcpServers": {
-		"clara": {
-			"type": "http",
-			"url": "https://mcp.clara.nops.io/mcp"
-		}
-	}
-}

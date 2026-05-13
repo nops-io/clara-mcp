@@ -17,14 +17,14 @@ mkdir -p dist/build/cursor
 mkdir -p dist
 
 rsync -a packages/claude/ dist/build/claude/
-
 mkdir -p dist/build/claude/skills
 rsync -a shared/skills/ dist/build/claude/skills/
+cp shared/mcp/clara.mcp.json dist/build/claude/.mcp.json
 
 rsync -a packages/cursor/ dist/build/cursor/
-
 mkdir -p dist/build/cursor/skills
 rsync -a shared/skills/ dist/build/cursor/skills/
+cp shared/mcp/clara.mcp.json dist/build/cursor/.mcp.json
 
 rm -f "dist/clara-claude-plugin-v${VERSION}.zip"
 (
