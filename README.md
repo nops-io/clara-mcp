@@ -1,12 +1,18 @@
 # Clara Integrations
 
-Public install packages and setup guides for connecting Clara to Claude, Cursor, and other AI clients.
-
-This repository contains the client-facing integration assets for Clara.
-
-The packages in this repo connect supported AI clients to Clara’s hosted MCP endpoint and provide client-specific skills, rules, and setup documentation.
+Install packages and setup guides for connecting Clara to Claude, Cursor, and other AI clients.
 
 ## Supported clients
 
-- Claude
-- Cursor
+| Client | Install guide |
+|---|---|
+| Claude | [docs/install-claude.md](docs/install-claude.md) |
+| Cursor | [docs/install-cursor.md](docs/install-cursor.md) |
+
+## Authentication
+
+Clara authenticates via OAuth on first use. See [docs/auth.md](docs/auth.md).
+
+## Troubleshooting
+
+See [docs/troubleshooting.md](docs/troubleshooting.md).

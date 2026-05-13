@@ -19,10 +19,11 @@ mkdir -p dist/build/cursor
 mkdir -p dist
 
 test -f packages/claude/.claude-plugin/plugin.json
-test -f packages/cursor/.cursor-plugin/plugin.json
+test -d packages/cursor/.cursor/rules
 test -d shared/skills
 test -f shared/mcp/clara.mcp.json
 
+# Claude package: merge shared skills and MCP config
 rsync -a \
 	--exclude "skills" \
 	--exclude ".mcp.json" \
@@ -33,31 +34,20 @@ mkdir -p dist/build/claude/skills
 rsync -a shared/skills/ dist/build/claude/skills/
 cp shared/mcp/clara.mcp.json dist/build/claude/.mcp.json
 
-rsync -a \
-	--exclude "skills" \
-	--exclude ".mcp.json" \
-	packages/cursor/ \
-	dist/build/cursor/
+# Cursor package: output is a .cursor/ directory that drops into project root
+rsync -a packages/cursor/.cursor/ dist/build/cursor/.cursor/
+cp shared/mcp/clara.mcp.json dist/build/cursor/.cursor/mcp.json
 
-mkdir -p dist/build/cursor/skills
-rsync -a shared/skills/ dist/build/cursor/skills/
-cp shared/mcp/clara.mcp.json dist/build/cursor/.mcp.json
-
+# Stamp version into Claude plugin manifest
 python3 - <<EOF
 import json
 from pathlib import Path
 
 version = "${VERSION}"
-
-manifest_paths = [
-	Path("dist/build/claude/.claude-plugin/plugin.json"),
-	Path("dist/build/cursor/.cursor-plugin/plugin.json"),
-]
-
-for path in manifest_paths:
-	data = json.loads(path.read_text())
-	data["version"] = version
-	path.write_text(json.dumps(data, indent="\t") + "\n")
+path = Path("dist/build/claude/.claude-plugin/plugin.json")
+data = json.loads(path.read_text())
+data["version"] = version
+path.write_text(json.dumps(data, indent="\t") + "\n")
 EOF
 
 rm -f "dist/clara-claude-plugin-v${VERSION}.zip"
