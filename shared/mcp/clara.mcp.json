@@ -2,7 +2,7 @@
 	"mcpServers": {
 		"clara": {
 			"type": "http",
-			"url": "https://mcp.clara.nops.io/mcp"
+			"url": "https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A757559217499%3Aruntime%2FnOpsClaraAgentCore_Mcp-dGV1WrGQ5a/invocations?qualifier=DEFAULT"
 		}
 	}
 }

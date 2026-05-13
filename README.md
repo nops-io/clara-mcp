@@ -11,14 +11,14 @@ Install packages and setup guides for connecting Clara to Claude, Cursor, and ot
 
 ## Standalone MCP setup
 
-To connect Clara to any MCP-compatible client without installing a full plugin, add the following to your client's MCP configuration:
+The Claude and Cursor plugins above include the MCP server config and register it automatically. If you're using a different MCP-compatible client, add the following manually:
 
 ```json
 {
   "mcpServers": {
     "clara": {
       "type": "http",
-      "url": "https://mcp.clara.nops.io/mcp"
+      "url": "https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A757559217499%3Aruntime%2FnOpsClaraAgentCore_Mcp-dGV1WrGQ5a/invocations?qualifier=DEFAULT"
     }
   }
 }

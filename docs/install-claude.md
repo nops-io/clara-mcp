@@ -2,10 +2,17 @@
 
 ## Prerequisites
 
-- Claude Code CLI (`claude`) v2.1.128 or later
+- Claude desktop app or Claude Code CLI (`claude`) v2.1.128 or later
 - An active nOps account
 
-## Install
+## Install — desktop app
+
+1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](../releases) page.
+2. In Claude, go to **Settings → Plugins** and click the **+** next to Personal plugins.
+3. Select the downloaded `.zip` file.
+4. Clara will appear in the left sidebar under Personal plugins.
+
+## Install — CLI
 
 1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](../releases) page.
 
@@ -21,29 +28,34 @@
    claude --plugin-dir ./clara-claude-plugin-v*.zip
    ```
 
-3. Confirm the plugin is active:
+## Connect the MCP server
 
-   ```sh
-   claude plugin list
-   ```
+After installing, the Clara MCP connector must be connected before you can query data:
+
+1. Open the Clara plugin in the sidebar and go to **Connectors**.
+2. Click **Install** next to the `clara` connector.
+3. Follow the OAuth prompt to authorize with your nOps account.
+
+Once connected, the center panel will show the available Clara tools. See [auth.md](auth.md) for more on authentication.
 
 ## Verify
 
 Start a conversation and ask: _"List my Clara datasets."_
-
-Claude will prompt you to authorize with nOps on the first request. See [auth.md](auth.md) for details.
 
 ## What's included
 
 | Path | Purpose |
 |---|---|
 | `.claude-plugin/plugin.json` | Plugin manifest |
-| `.mcp.json` | Clara MCP server — auto-registered when the plugin loads |
+| `.mcp.json` | Clara MCP server — registered automatically when the plugin loads |
 | `skills/commitment-analysis/` | Commitment analysis skill |
 | `skills/query-clara/` | General Clara query skill |
 
 ## Uninstall
 
+**Desktop app** — right-click Clara in the sidebar and select Remove.
+
+**CLI:**
 ```sh
 claude plugin uninstall clara
 ```
