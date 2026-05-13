@@ -22,6 +22,7 @@ jobs:
       - name: Validate package structure
         run: |
           test -f packages/claude/.claude-plugin/plugin.json
+          test -f packages/cursor/.cursor-plugin/plugin.json
           test -d packages/cursor/.cursor/rules
           test -d shared/skills
           test -f shared/mcp/clara.mcp.json

@@ -38,17 +38,21 @@ cp shared/mcp/clara.mcp.json dist/build/claude/.mcp.json
 rsync -a packages/cursor/.cursor/ dist/build/cursor/.cursor/
 rsync -a shared/skills/ dist/build/cursor/.cursor/skills/
 cp shared/mcp/clara.mcp.json dist/build/cursor/.cursor/mcp.json
+rsync -a packages/cursor/.cursor-plugin/ dist/build/cursor/.cursor-plugin/
 
-# Stamp version into Claude plugin manifest
+# Stamp version into plugin manifests
 python3 - <<EOF
 import json
 from pathlib import Path
 
 version = "${VERSION}"
-path = Path("dist/build/claude/.claude-plugin/plugin.json")
-data = json.loads(path.read_text())
-data["version"] = version
-path.write_text(json.dumps(data, indent="\t") + "\n")
+for path in [
+    Path("dist/build/claude/.claude-plugin/plugin.json"),
+    Path("dist/build/cursor/.cursor-plugin/plugin.json"),
+]:
+    data = json.loads(path.read_text())
+    data["version"] = version
+    path.write_text(json.dumps(data, indent="\t") + "\n")
 EOF
 
 rm -f "dist/clara-claude-plugin-v${VERSION}.zip"

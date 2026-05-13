@@ -17,6 +17,7 @@ rm -rf dist/build/cursor
 mkdir -p dist/build/cursor
 mkdir -p dist
 
+test -f packages/cursor/.cursor-plugin/plugin.json
 test -d packages/cursor/.cursor/rules
 test -d shared/skills
 test -f shared/mcp/clara.mcp.json
@@ -25,6 +26,18 @@ test -f shared/mcp/clara.mcp.json
 rsync -a packages/cursor/.cursor/ dist/build/cursor/.cursor/
 rsync -a shared/skills/ dist/build/cursor/.cursor/skills/
 cp shared/mcp/clara.mcp.json dist/build/cursor/.cursor/mcp.json
+rsync -a packages/cursor/.cursor-plugin/ dist/build/cursor/.cursor-plugin/
+
+python3 - <<EOF
+import json
+from pathlib import Path
+
+version = "${VERSION}"
+path = Path("dist/build/cursor/.cursor-plugin/plugin.json")
+data = json.loads(path.read_text())
+data["version"] = version
+path.write_text(json.dumps(data, indent="\t") + "\n")
+EOF
 
 OUT="dist/clara-cursor-plugin-v${VERSION}.zip"
 rm -f "$OUT"

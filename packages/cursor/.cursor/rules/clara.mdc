@@ -1,0 +1,14 @@
+---
+description: Clara usage rules
+alwaysApply: true
+---
+
+Use Clara MCP tools for nOps Clara, FinOps, AWS cost, commitment, dashboard, and cloud optimization questions.
+
+When using Clara:
+- Prefer the Clara MCP tools over guessing.
+- Do not ask the user for client_id or tenant identifiers.
+- List available data sources before querying unfamiliar data.
+- Describe a table before constructing a query.
+- Keep queries bounded and specific.
+- Do not invent Clara data if the MCP tools do not return it.

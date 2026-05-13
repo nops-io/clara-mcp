@@ -17,7 +17,9 @@
 
    This places `.cursor/mcp.json`, `.cursor/rules/clara.mdc`, and `.cursor/skills/` directly into your project — exactly where Cursor expects them.
 
-3. Reload the Cursor window (**Cmd+Shift+P → Reload Window**) to activate the MCP server.
+3. Open **Cursor Settings → Tools & MCP** and enable the **clara** server.
+
+4. Reload the Cursor window (**Cmd+Shift+P → Reload Window**) to activate the MCP server.
 
 ## Verify
 
