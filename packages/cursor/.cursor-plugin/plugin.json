@@ -1,0 +1,8 @@
+{
+	"name": "clara",
+	"displayName": "Clara",
+	"description": "Use Clara from Cursor to analyze cloud costs, commitments, dashboards, and FinOps data.",
+	"version": "0.1.0",
+	"publisher": "nOps",
+	"license": "MIT"
+}

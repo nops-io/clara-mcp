@@ -1,0 +1,8 @@
+{
+	"name": "clara",
+	"description": "Use Clara from Claude Code to analyze cloud costs, commitments, dashboards, and FinOps data.",
+	"version": "0.1.0",
+	"author": {
+		"name": "nOps"
+	}
+}
