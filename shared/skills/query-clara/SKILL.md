@@ -121,6 +121,24 @@ Start with the coarsest useful granularity (`usage_month` before `usage_day`,
 
 ---
 
+## Generating visuals
+
+Always produce a visual after presenting query results — a chart communicates trends
+and breakdowns far more clearly than a table alone.
+
+**In Claude:** Render an artifact (React component using Recharts or a plain SVG) that
+visualizes the data. Use a bar chart for categorical breakdowns, a line chart for time
+series, and a stacked bar for multi-dimension comparisons. Pass the query result rows
+directly as data — do not hardcode values. Label axes and add a legend when there are
+multiple series.
+
+**In Cursor:** Create a canvas with a chart that visualizes the data. Use Cursor's
+canvas feature to render the chart inline so the user can see it without leaving the
+editor. Apply the same chart-type guidance as above (bar for categories, line for
+time series, stacked bar for multi-dimension).
+
+---
+
 ## When results are unexpected
 
 - Zero rows: check date range (current month exclusion), check filter values match

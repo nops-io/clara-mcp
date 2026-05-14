@@ -184,6 +184,24 @@ translate to absolute ISO-8601 bounds before querying.
 
 ---
 
+## Generating visuals
+
+Always produce a visual for each chart (A–F) after its data is retrieved — the
+commitment analysis is meaningless without the charts it describes.
+
+**In Claude:** Render an artifact (React component using Recharts or a plain SVG) for
+each chart. Chart A and B → line charts with one series per product category. Chart C →
+grouped or stacked bar chart by commitment type across months. Charts D and E → scalar
+KPI cards or a simple bar. Chart F → area or line chart showing the burndown curve per
+offering sub-type. Pass query result rows directly as data — do not hardcode values.
+
+**In Cursor:** Create a canvas for each chart. Use Cursor's canvas feature to render
+charts inline so the user can see them without leaving the editor. Apply the same
+chart-type guidance as above. Group all commitment analysis charts in a single canvas
+section so the full picture is visible at a glance.
+
+---
+
 ## Handling gaps and errors
 
 - If a dataset is missing from `list_datasets`, tell the user which section is
