@@ -2,6 +2,7 @@
 	"name": "clara",
 	"description": "Use Clara from Cursor to analyze cloud costs, commitments, dashboards, and FinOps data.",
 	"version": "0.0.0",
+	"repository": "https://github.com/nops-io/clara-mcp",
 	"author": {
 		"name": "nOps"
 	},

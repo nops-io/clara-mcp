@@ -7,7 +7,7 @@
 
 ## Install
 
-1. Download the latest `clara-cursor-plugin-v*.zip` from the [Releases](https://github.com/nops-io/clara-integrations/releases) page.
+1. Download the latest `clara-cursor-plugin-v*.zip` from the [Releases](https://github.com/nops-io/clara-mcp/releases) page.
 
 2. Extract it into your project root:
 

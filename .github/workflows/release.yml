@@ -1,4 +1,4 @@
-name: Release integration packages
+name: Release MCP packages
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   package:
-    name: Package Clara integrations
+    name: Package Clara MCP plugins
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
           test -d shared/skills
           test -f shared/mcp/clara.mcp.json
 
-      - name: Package integrations
+      - name: Package MCP plugins
         run: |
           chmod +x scripts/package-all.sh
           chmod +x scripts/package-claude.sh
@@ -46,5 +46,5 @@ jobs:
           else
             gh release create "$TAG" dist/*.zip \
               --title "$TAG" \
-              --notes "Clara integration packages for $TAG"
+              --notes "Clara MCP plugin packages for $TAG"
           fi
