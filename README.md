@@ -1,4 +1,4 @@
-# Clara Integrations
+# Clara MCP Plugins
 
 Install packages and setup guides for connecting Clara to Claude, Cursor, and other AI clients.
 
