@@ -5,34 +5,32 @@
 - Claude desktop app or Claude Code CLI (`claude`) v2.1.128 or later
 - An active nOps account
 
-## Install — CLI (recommended)
-
-1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](https://github.com/nops-io/clara-mcp/releases) page.
-
-2. Install the plugin:
-
-   ```sh
-   claude plugin install ./clara-claude-plugin-v*.zip
-   ```
-
-   Or load it for a single session without installing permanently:
-
-   ```sh
-   claude --plugin-dir ./clara-claude-plugin-v*.zip
-   ```
-
-3. To keep the plugin up to date as new versions are released:
-
-   ```sh
-   claude plugin update clara
-   ```
-
-## Install — desktop app
+## Install
 
 1. Download the latest `clara-claude-plugin-v*.zip` from the [Releases](https://github.com/nops-io/clara-mcp/releases) page.
 2. In Claude, go to **Settings → Plugins** and click the **+** next to Personal plugins.
 3. Select the downloaded `.zip` file.
 4. Clara will appear in the left sidebar under Personal plugins.
+
+## Install — Claude Code
+
+Alternatively, install via the Claude Code CLI:
+
+```sh
+claude plugin install ./clara-claude-plugin-v*.zip
+```
+
+Or load it for a single session without installing permanently:
+
+```sh
+claude --plugin-dir ./clara-claude-plugin-v*.zip
+```
+
+To keep the plugin up to date as new versions are released:
+
+```sh
+claude plugin update clara
+```
 
 ## Connect the MCP server
 
