@@ -171,10 +171,47 @@ translate to absolute ISO-8601 bounds before querying.
 
 ---
 
+## Pagination
+
+`query_dataset` supports SQL-level pagination via `limit` (page size) and `offset`
+(row skip) inside the query object.
+
+Server constraints:
+- Default page size: **1,000 rows** (applied when `limit` is omitted)
+- Maximum page size: **5,000 rows**
+
+**Omit `limit` on the first call** — let the 1,000-row default apply. If the response
+comes back with `truncated: true`, the result set is larger than one page: switch to
+paginating with `limit: 5000` and `offset` to collect the remaining rows efficiently.
+
+```
+call 1: {selection: {...}}
+  → returned_rows=1000, truncated=true
+call 2: {selection: {...}, limit: 5000, offset: 1000}
+  → returned_rows=5000, truncated=true
+call 3: {selection: {...}, limit: 5000, offset: 6000}
+  → returned_rows=834, truncated=false  ← done, concatenate all pages
+```
+
+Rules:
+- Increment `offset` by `returned_rows` each iteration — the last page is often
+  shorter than `limit`.
+- `truncated` is heuristic: a full page (`returned_rows == limit`) reports `truncated:
+  true`. On an exact-fit last page the next call returns zero rows — that also
+  terminates the loop.
+- Drive the loop from `truncated` and `returned_rows` only. Do not parse
+  `truncation_message` strings — their wording may change server-side.
+- Keep every other query parameter identical across pages.
+- **Measures-only queries** (no `dimensions`): the server cannot inject a stable sort
+  for these. Either supply your own `order_by` or skip pagination — measures-only
+  queries are typically a single aggregate row anyway.
+
+---
+
 ## Result presentation
 
-- Always check the `truncated` flag. If true, note that results show the first N rows
-  and offer to narrow the date range or add a filter.
+- Accumulate all pages before presenting (see Pagination above). Do not report partial
+  results mid-pagination.
 - Check `applied_policies` and surface any row-level restrictions to the user.
 - Use business language throughout — never expose dimension IDs, measure IDs, dataset
   IDs, or table names.
