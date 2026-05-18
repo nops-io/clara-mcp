@@ -30,6 +30,12 @@ Call `list_datasets`. Match the results to these three datasets by name or descr
 | `burndown` | "Commitment Burndown" |
 
 If fewer than three are present, proceed with what is available and note the gap.
+
+If a dataset name is ambiguous — multiple results could plausibly match one of the
+three logical names — **stop and ask the user to choose** from the candidates before
+proceeding. Present each option with both its human-readable `name` and its
+`description` from `list_datasets`. Never show dataset ids or internal identifiers.
+
 Call `describe_dataset` for each matched dataset before querying — never assume field IDs.
 
 ---

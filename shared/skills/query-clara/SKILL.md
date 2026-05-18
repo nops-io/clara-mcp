@@ -21,9 +21,27 @@ Call `list_datasets`. It returns the datasets the user has access to, each with 
 `id`, `name`, and `description`. Read the descriptions — they tell you which datasets
 cover which domains (commitments, savings, usage, rightsizing, etc.).
 
-If the user's question maps clearly to one dataset, proceed with that one. If it could
-span multiple, pick the most specific match first; broaden if the results are
-insufficient.
+**Do not commit to a dataset on description alone.** A description like "Line-level
+AWS Cost and Usage Report" can look like a perfect match for a question about line
+items, while a differently-named dataset actually exposes the exact fields requested.
+Description match is a starting hypothesis, not a decision.
+
+### When the user names specific fields or columns
+
+If the user asks for specific field names (e.g. `bill_payer_account_id`,
+`product_region_name`, `line_item_usage_type`), **identify the top 2–3 candidate
+datasets by description, then call `describe_dataset` on each before choosing**.
+Compare which dataset actually exposes the requested fields — or the closest 1:1
+equivalents — and pick on schema fit, not name pattern. The dataset with the most
+direct field matches wins.
+
+### When the choice is still ambiguous
+
+If two or more datasets are plausible after schema inspection, or you have low
+confidence after reading descriptions for a more open-ended question, **stop and ask
+the user to choose** — present each candidate with both its human-readable `name`
+and its `description` from `list_datasets`. Never show dataset ids or internal
+identifiers. Wait for the user's selection before querying.
 
 ---
 
