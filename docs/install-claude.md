@@ -54,8 +54,9 @@ Start a conversation and ask: _"List my Clara datasets."_
 |---|---|
 | `.claude-plugin/plugin.json` | Plugin manifest |
 | `.mcp.json` | Clara MCP server — registered automatically when the plugin loads |
-| `skills/commitment-analysis/` | Commitment analysis skill |
 | `skills/query-clara/` | General Clara query skill |
+| `skills/commitment-analysis/` | Commitment savings rate, coverage, realized savings, and burndown |
+| `skills/commitment-recommendations/` | Recommended commitments alongside realized savings for validation |
 
 ## Uninstall
 

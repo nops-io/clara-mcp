@@ -35,6 +35,7 @@ Cursor will prompt you to authorize with nOps on the first request. See [auth.md
 | `.cursor/rules/clara.mdc` | Always-apply behavioral rules for Clara |
 | `.cursor/skills/query-clara/` | Skill: query Clara datasets for cloud cost and FinOps questions |
 | `.cursor/skills/commitment-analysis/` | Skill: analyze commitment savings rate, coverage, and burndown |
+| `.cursor/skills/commitment-recommendations/` | Skill: recommended commitments alongside realized savings for validation |
 
 ## Global install (all projects)
 
@@ -46,4 +47,4 @@ unzip clara-cursor-plugin-v*.zip -d ~
 
 ## Uninstall
 
-Remove the `clara` entry from `.cursor/mcp.json` and delete `.cursor/rules/clara.mdc` and `.cursor/skills/query-clara/` and `.cursor/skills/commitment-analysis/`.
+Remove the `clara` entry from `.cursor/mcp.json` and delete `.cursor/rules/clara.mdc` and the `.cursor/skills/` directory.
