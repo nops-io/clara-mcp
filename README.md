@@ -18,7 +18,7 @@ The Claude and Cursor plugins above include the MCP server config and register i
   "mcpServers": {
     "clara": {
       "type": "http",
-      "url": "https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A757559217499%3Aruntime%2FnOpsClaraAgentCore_Mcp-dGV1WrGQ5a/invocations?qualifier=DEFAULT"
+      "url": "https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A861341088565%3Aruntime%2FnOpsClaraAgentCore_Mcp-t1ODTWEeCy/invocations?qualifier=DEFAULT"
     }
   }
 }

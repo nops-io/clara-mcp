@@ -16,7 +16,7 @@ Clara sessions expire after a period of inactivity. Just follow the next auth pr
 
 - Confirm the `.mcp.json` file is in the correct location for your client (plugin root for Claude, or added to Cursor MCP settings).
 - Restart your AI client after installing or updating the plugin.
-- Check that `https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A757559217499%3Aruntime%2FnOpsClaraAgentCore_Mcp-dGV1WrGQ5a/invocations?qualifier=DEFAULT` is reachable from your network (no firewall blocking outbound HTTPS).
+- Check that `https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A861341088565%3Aruntime%2FnOpsClaraAgentCore_Mcp-t1ODTWEeCy/invocations?qualifier=DEFAULT` is reachable from your network (no firewall blocking outbound HTTPS).
 
 **Tools appear but return errors**
 
