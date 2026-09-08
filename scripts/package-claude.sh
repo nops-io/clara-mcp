@@ -46,7 +46,7 @@ OUT="dist/clara-claude-plugin-v${VERSION}.zip"
 rm -f "$OUT"
 (
 	cd dist/build/claude
-	zip -r "../../$OUT" . -x "*.DS_Store"
+	zip -r "$OLDPWD/$OUT" . -x "*.DS_Store"
 )
 
 echo "Created $OUT"
