@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.nops-io/clara",
+  "title": "Clara by nOps",
+  "description": "FinOps assistant: query AWS, GCP and Azure cost, commitments, budgets and reports.",
+  "repository": {
+    "url": "https://github.com/nops-io/clara-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://www.nops.io",
+  "version": "1.0.0",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/nops-io/clara-mcp/main/assets/logo.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.nops.io"
+    }
+  ]
+}

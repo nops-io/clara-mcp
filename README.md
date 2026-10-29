@@ -28,7 +28,11 @@ The Claude and Cursor plugins above include the MCP server config and register i
 
 **Cursor** — add to `.cursor/mcp.json` in your project root, or to `~/.cursor/mcp.json` for global access.
 
+**Gemini CLI** — `gemini extensions install https://github.com/nops-io/clara-mcp`
+
 **Other clients** — consult your client's MCP documentation for where to place server configuration.
+
+Clara is also published to the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.nops-io/clara) as `io.github.nops-io/clara` (see [`server.json`](server.json)).
 
 Clara authenticates via OAuth on first use. See [docs/auth.md](docs/auth.md) for details.
 

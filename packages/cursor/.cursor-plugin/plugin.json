@@ -2,9 +2,12 @@
 	"name": "clara",
 	"description": "Use Clara from Cursor to analyze cloud costs, commitments, dashboards, and FinOps data.",
 	"version": "0.0.0",
+	"homepage": "https://www.nops.io",
 	"repository": "https://github.com/nops-io/clara-mcp",
 	"author": {
 		"name": "nOps"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"keywords": ["finops", "cloud-cost", "aws", "gcp", "azure", "commitments", "nops", "mcp"],
+	"logo": "https://raw.githubusercontent.com/nops-io/clara-mcp/main/assets/logo.png"
 }
