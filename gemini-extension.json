@@ -1,0 +1,10 @@
+{
+  "name": "clara",
+  "version": "1.0.0",
+  "description": "Clara by nOps: ask about AWS, GCP and Azure cost, commitments, budgets, reports and anomalies. Signs in with your nOps account (OAuth).",
+  "mcpServers": {
+    "clara": {
+      "httpUrl": "https://mcp.nops.io"
+    }
+  }
+}
